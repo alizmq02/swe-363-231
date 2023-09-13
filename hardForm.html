@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply</title>
+</head>
+<body>
+    <h1>Fill the  form to apply to add a paper review</h1>
+    <form action="cong.html">
+        <div>
+            <label for="name"> Name</label>
+            <input type="text" name="name" id="name" autocomplete="on" placeholder="e.g. Ali Alqutayfi">
+        </div>
+        <div>
+            <p>Choose your standing</p>
+            <input type="radio" name="S" id="S">
+            <label for="S">School Student</label>
+            <input type="radio" name="U" id="U">
+            <label for="U">University Student of Graduate</label>
+            <input type="radio" name="F" id="F">
+            <label for="F">Industry Experience</label>
+        </div>
+        <br>
+        <div>
+            <label for="listofp">Choose the paper type:</label>
+            <input list="listofp" id="listofp" name="listofp" />
+            <datalist id="listofp">
+                <option value="Building models"></option>
+                <option value="Evaluating methods"></option>
+                <option value="Enhancing models"></option>
+                <option value="sdaf"></option>
+            </datalist>
+        </div>
+        <div>
+            <label for="pn">Paper name: </label>
+            <input type="text">
+        </div>
+        <div>
+            <label for="py">Paper author</label>
+            <input type="text">
+        </div>
+        <input type="submit">
+    </form>
+</body>
+</html>
