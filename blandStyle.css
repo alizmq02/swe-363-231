@@ -1,6 +1,10 @@
 h1, h2, h3, h4, h5, h6 {
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
+
+th {
+    text-transform:uppercase;
+  }
 
 a {
     color: green;
@@ -18,3 +22,48 @@ em {
     text-transform: uppercase;
     background-color: gold;
 }
+
+h2 {
+    font-family: sans-serif;
+}
+
+h2+p:first-letter {
+    font-size:x-large;
+  }
+
+  tbody tr:hover, tbody tr:hover td{
+    background-color:#fa7900;
+  }
+
+  nav li {
+    display:inline;
+    margin-left: 5px;
+  }
+
+  nav ul li:first-child {
+    text-decoration:underline;
+    color:#3e4749;
+  }
+  tbody tr:nth-child(odd){
+    background-color: #565f51;
+  }
+
+  ::selection {
+    background-color: #fbff01;
+  }
+
+  a:hover {
+    cursor:pointer;
+  }
+
+  input {
+    height:20px;
+  }
+
+  input:not([type="submit"]){
+    border: 4px solid gray;
+  }
+
+  input[name="message"]{
+    height:50px;
+  }
