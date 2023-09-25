@@ -1,0 +1,76 @@
+body {
+    background: var(--neutral-colors-200, #FAFAFC);
+    color: var(--neutral-colors-text-gray, #9795B5);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Body/Default */
+    font-family: DM Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 166.667% */
+}
+
+h1 {
+    color: var(--neutral-colors-headings-black, #5D5A88);
+    /* Headings/H1 */
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 66px; /* 117.857% */
+}
+
+h2 {
+    color: var(--neutral-colors-headings-black, #5D5A88);
+
+    /* Headings/H2 */
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 46px; /* 127.778% */
+}
+
+h3 {
+    color: var(--neutral-colors-headings-black, #5D5A88);
+
+    /* Headings/H3 */
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px; /* 141.667% */
+}
+
+h4 {
+    color: var(--neutral-colors-headings-black, #5D5A88);
+
+    /* Headings/H4 */
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px; /* 127.273% */
+}
+
+h5 {
+    color: var(--neutral-colors-headings-black, #5D5A88);
+
+    /* Headings/H5 */
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px; /* 133.333% */
+}
+
+h6 {
+    color: var(--neutral-colors-headings-black, #5D5A88);
+
+    /* Headings/H6 */
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px; /* 137.5% */
+}
+th {
+    font: bold;
+    color: #5D5A88;
+}
+table,
+th,
+td {
+  padding: 10px;
+  border: 1px solid #5D5A88;
+  border-collapse: collapse;
+}
