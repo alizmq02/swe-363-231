@@ -74,3 +74,41 @@ td {
   border: 1px solid #5D5A88;
   border-collapse: collapse;
 }
+
+.buttonStyle1 {
+    background-color: #4a458b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.buttonStyle1:hover {
+    background-color: #73709a;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+  
+.hamburgerIcon {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#humImage {
+    width: 30px;
+    height: 20px;
+}
+  
+.navbarItems {
+    display: none;
+    transition-delay: 0.8s;
+}
+  
+.navbar:hover .navbarItems {
+    display: block;
+}
