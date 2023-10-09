@@ -1,1 +1,3 @@
 My website is already mobile friendly.
+
+My website is already responsive for both desktop and mobile.
