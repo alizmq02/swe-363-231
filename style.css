@@ -9,6 +9,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 30px; /* 166.667% */
+    position: relative;
 }
 
 h1 {
@@ -107,22 +108,30 @@ td {
 .navbarItems {
     display: none;
     transition-delay: 0.8s;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    display: inline-block;
 }
   
 .navbar:hover .navbarItems {
     display: block;
 }
 
-.loader {
+/* .loader {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #f2f2f2;
-}
+} */
   
-.loader {
+/* .loader {
     width: 100%;
     height: 10vh;
     display: flex;
@@ -140,14 +149,14 @@ td {
     border-top: 4px solid transparent;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-}
+} */
 
-.content {
+/* .content {
     opacity: 0;
     animation: revealContent 0.5s ease-in 2.5s forwards;
-}
+} */
 
-@keyframes spin {
+/* @keyframes spin {
     0% {
         transform: rotate(0deg);
     }
@@ -174,4 +183,70 @@ td {
     100% {
         opacity: 1;
     }
+} */
+
+.side_card {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    border-radius: 20px;
+    background: var(--neutral-colors-color-400, #F2F1FA);
+    align-items: center;
+}
+
+.addb {
+    position: relative;
+    top: 35%;
+    left: 20%;
+    color: white;
+    font: bold;
+    align-items: center;
+    display: inline-flex;
+    padding: 18px 24px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 30px;
+    background: var(--neutral-colors-headings-black, #5D5A88);
+}
+.image {
+    position: relative;
+    display: inline-block;
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.watermark p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content_card {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    border: 1px solid var(--neutral-colors-color-600, #D4D2E3);
+    background: var(--neutral-colors-white, #FFF);
+    text-align: center;
+    position: relative;
+}
+
+.lc {
+    position: absolute;
+    top: 28%;
+    right: 34%;
+}
+
+.sc {
+    position: absolute;
+    bottom: 0%;
 }
