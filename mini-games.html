@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .cell {
+            font-family: sans-serif;
+            font-size: larger;
+            font-weight: bolder;
+            background-color: beige;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cell:hover {
+            background-color: blanchedalmond;
+        }
+
+        .row {
+            display: flex;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 id="turn">
+        Now it's is <span>X</span> turn
+    </h1>
+    <!-- Board -->
+    <div class="board">
+        <div class="row">
+            <div class="cell" id="0"></div>
+            <div class="cell" id="1"></div>
+            <div class="cell" id="2"></div>
+        </div>
+        <div class="row">
+            <div class="cell" id="3"></div>
+            <div class="cell" id="4"></div>
+            <div class="cell" id="5"></div>
+        </div>
+        <div class="row">
+            <div class="cell" id="6"></div>
+            <div class="cell" id="7"></div>
+            <div class="cell" id="8"></div>
+        </div>
+
+        <a style="margin-left: 42%;" href="mini-games.html" class="as"> <button> Reset </button></a>
+        <script>
+
+            // decided which turn is it
+            let turn = "X"
+            let color = "red"
+            let gameEnded = false
+            let listOfMoves = [0, 0, 0,
+                                0, 0, 0,
+                                0, 0, 0]
+            winner = 0
+
+            // when we click on a cell add the letter 
+            let board = document.getElementsByClassName("board")[0]
+            board.addEventListener("click", cellClicked)
+            let steps = 0
+
+            function cellClicked(event) {
+                let cell = event.target
+                if(!cell.innerText & !gameEnded){
+                    steps++
+                    cell.innerText = turn
+                    cell.style.backgroundColor = color
+                    listOfMoves[parseInt(cell.id)] = turn === "X" ? 1 : 100
+                    h1 = listOfMoves[0] + listOfMoves[1] + listOfMoves[2]
+                    h2 = listOfMoves[3] + listOfMoves[4] + listOfMoves[5]
+                    h3 = listOfMoves[6] + listOfMoves[7] + listOfMoves[8]
+                    v1 = listOfMoves[0] + listOfMoves[3] + listOfMoves[6]
+                    v2 = listOfMoves[1] + listOfMoves[4] + listOfMoves[7]
+                    v3 = listOfMoves[2] + listOfMoves[5] + listOfMoves[8]
+                    d1 = listOfMoves[0] + listOfMoves[4] + listOfMoves[8]
+                    d2 = listOfMoves[2] + listOfMoves[4] + listOfMoves[6]
+
+                    if(h1 == 3 || h2 == 3 || h3 == 3 || v1 == 3 || v2 == 3 || v3 == 3 || d1 == 3 || d2 == 3){
+                        winner = 1
+                        gameEnded = true
+                    }
+
+                    else if(h1 == 300 || h2 == 300 || h3 == 300 || v1 == 300 || v2 == 300 || v3 == 300 || d1 == 300 || d2 == 300){
+                        winner = 2
+                        gameEnded = true
+                    }
+                    else{
+                        if(steps == 9){
+                            turnLetter = document.querySelector("#turn")
+                            turnLetter.innerText = "The result is draw"
+                            gameEnded = true
+                        }
+                    }
+                    turnLetter = document.querySelector("#turn")
+                    if (gameEnded) {
+                        if(winner == 1){
+                            turnLetter.innerText = "The winner is X"
+                        }
+                        // else if(winner = -1){
+                        //     turnLetter.innerText = "The result is draw"
+                        // }
+                        else if(winner == 2) {
+                            turnLetter.innerText = "The winner is O"
+                        }
+
+                    } else {
+                        // change turn
+                        turn = turn === "X" ? "O" : "X"
+                        color = color === "red" ? "blue" : "red"
+
+                        //change title
+                        turnLetter = document.querySelector("#turn span")
+                        turnLetter.innerText = turn
+                    }
+                }
+                
+            }
+        </script>
+    </div>
+</body>
+
+</html>
