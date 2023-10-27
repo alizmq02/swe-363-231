@@ -101,8 +101,36 @@
             </div>
           </div>
         </div>
-     </div>
+      </div>
       <hr>
+
+      <div>
+        <h3>Register to get latest work announcements!</h3>
+        <label for="">Write your email</label>
+        <input type="email" name="email" id="em">
+        <button onclick="getValue()">Submit</button>
+      </div>
+      <script>
+        function getValue() {
+        let textField = document.getElementById("em")
+        let value = textField.value
+        let parts = value.split("@")
+        let domain1 = ""
+        if (parts.length === 2) {
+          domain1 = parts[1]
+        } else {
+          alert("Invalid email address!")
+        }
+        const domain = domain1
+        let xmlHttp = new XMLHttpRequest()
+        xmlHttp.open( "GET", "https://api.mailcheck.ai/domain/" + domain, false )
+        xmlHttp.send()
+        console.log(xmlHttp.responseText)
+        let respond = JSON.parse(xmlHttp.responseText)
+        alert("Is the email valid? " + respond.mx)
+        }
+
+      </script>
 
       <!-- The footer section -->
       <footer id="9">
@@ -117,16 +145,16 @@
       let currentTag = 1 
       let totalTags = 9
       
-      document.getElementById(currentTag.toString()).scrollIntoView();
+      document.getElementById(currentTag.toString()).scrollIntoView()
 
       document.addEventListener('keydown', function(event) {
         if (event.key === 'u') {
           currentTag = (currentTag > 1) ? currentTag - 1 : totalTags
         } else if (event.key === 'd') {
-          currentTag = (currentTag < totalTags) ? currentTag + 1 : 1;
+          currentTag = (currentTag < totalTags) ? currentTag + 1 : 1
         }
         document.getElementById(currentTag.toString()).scrollIntoView()
-    });
+    })
     </script>
 </body>
 
